@@ -1,0 +1,106 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scripts/UI/UIMenuController.gd" id="1_ctrl"]
+[ext_resource type="Texture2D" path="res://Assets/UI/textures/panel_plate.jpg" id="2_panel"]
+
+[node name="UIMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 10
+script = ExtResource("1_ctrl")
+
+[node name="Root" type="Control" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MenuBG" type="NinePatchRect" parent="Root"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -300.0
+offset_right = 360.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_panel")
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+mouse_filter = 2
+
+[node name="Box" type="VBoxContainer" parent="Root/MenuBG"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = 70.0
+offset_right = -80.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 18
+
+[node name="Title" type="Label" parent="Root/MenuBG/Box"]
+layout_mode = 2
+text = "ПАУЗА"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Root/MenuBG/Box"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="SettingsBG" type="NinePatchRect" parent="Root"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -330.0
+offset_right = 460.0
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_panel")
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+mouse_filter = 2
+
+[node name="Box" type="VBoxContainer" parent="Root/SettingsBG"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = 60.0
+offset_right = -80.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Root/SettingsBG/Box"]
+layout_mode = 2
+text = "НАСТРОЙКИ"
+horizontal_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="Root/SettingsBG/Box"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Rows" type="VBoxContainer" parent="Root/SettingsBG/Box/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
